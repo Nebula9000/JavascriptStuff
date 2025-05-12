@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Stuff</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background-color: lightgrey;
+      }
+      h1 {
+        color: black;
+      }
+      button {
+        padding: 10px;
+        font-size: 16px;
+      }
+
+      #myCanvas {
+        background-color: #3d85c6;
+        border: 2px solid black;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      }
+      
+      #myCanvas2 {
+        background-color: #f44336;
+        border: 2px solid black;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+      }
+      
+      #ddakjiCanvas {
+            background-color: #b8860b;
+            border: 3px solid black;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Javascript</h1>
+    <p>Basic Javascript scripts because I forgot to remember.</p>
+ <button onclick="changeText()">Click For Numbers</button>
+    <p id="message">+64 21-000-000</p>
+    
+    <h1>
+    Ddakji
+    </h1>
+
+    <canvas id="myCanvas" width="200" height="200"></canvas>
+    <canvas id="myCanvas2" width="200" height="200"></canvas>
+    <canvas id="ddakjiCanvas" width="250" height="150"></canvas>
+    
+    <script>
+    
+      let canvas = document.getElementById("myCanvas");
+      let ctx = canvas.getContext("2d");
+      ctx.moveTo(0,0);
+      ctx.lineTo(200,200);
+      ctx.stroke();
+      ctx.moveTo(200,0);
+      ctx.lineTo(0,200);
+      ctx.stroke();
+      
+      let canvas2 = document.getElementById("myCanvas2");
+      let ctx2 = canvas2.getContext("2d");
+      ctx2.moveTo(0,0);
+      ctx2.lineTo(200,200);
+      ctx2.stroke();
+      ctx2.moveTo(200,0);
+      ctx2.lineTo(0,200);
+      ctx2.stroke();
+      
+        let canvas3 = document.getElementById("ddakjiCanvas");
+        let ctx3 = canvas3.getContext("2d");
+
+        function drawShapes() {
+            ctx3.clearRect(0, 0, canvas3.width, canvas3.height); // Clear canvas
+            ctx3.strokeStyle = "black";
+            ctx3.lineWidth = 3;
+
+            // Draw Circle
+            ctx3.beginPath();
+            ctx3.arc(50, 75, 30, 0, Math.PI * 2);
+            ctx3.stroke();
+
+            // Draw Triangle
+            ctx3.beginPath();
+            ctx3.moveTo(125, 45);
+            ctx3.lineTo(95, 100);
+            ctx3.lineTo(155, 100);
+            ctx3.lineTo(125, 45);
+            ctx3.stroke();
+
+            // Draw Square
+            ctx3.beginPath();
+            ctx3.moveTo(180, 50);
+            ctx3.lineTo(230, 50);
+            ctx3.lineTo(230, 100);
+            ctx3.lineTo(180, 100);
+            ctx3.lineTo(180, 50);
+            ctx3.stroke();
+        }
+
+        drawShapes(); // Draw the shapes on load
+
+
+
+      // This makes the button give a random number from 0 to 999,999,999
+        function changeText() {
+            let part2 = Math.floor(100 + Math.random() * 900);    // 3-digit middle
+            let part3 = Math.floor(100 + Math.random() * 900);    // 3-digit end
+
+            document.getElementById("message").textContent = `+64 21-${part2}-${part3}`;
+        }
+
+      // Displays a pop-up alert when the page loads
+      /*alert("Hello")
+
+      // Logs a message to the console
+      console.log("Hello. It seems you have found the console.")
+
+      function Layout() {
+        // The layout of a function
+      }
+
+      let testVariable = "this is how to make a variable"
+
+      document.write("document.write")
+
+      let testArray = [1, 2, 3, "hello"]
+
+      class Car {
+        //constructor called automatically when you make the object of the class
+        constructor(name, year) {
+          this.name = name
+          this.year = year
+        }
+        displayName() {
+          document.write("My car is " + this.name)
+        }
+        displayYear() {
+          document.write("My car year is " + this.year)
+        }
+      }
+      //make the object of the car class object name is car1
+      const car1 = new Car("BMW", 2020)
+      const car2 = new Car("Jaguar", 2026)
+      const car3 = new Car("Chevrolet", 2017)
+      const car4 = new Car("Volkswagon", 2021)
+
+      car1.displayName()
+      document.write("<br/>")
+      car1.displayYear()
+      document.write("<br/>")
+
+      car2.displayName()
+      document.write("<br/>")
+      car2.displayYear()
+      document.write("<br/>")
+
+      car3.displayName()
+      document.write("<br/>")
+      car3.displayYear()
+      document.write("<br/>")
+
+      car4.displayName()
+      document.write("<br/>")
+      car4.displayYear()
+      document.write("<br/>")
+
+      const da = new Date()
+      document.write(da)
+
+      const dt = da.getDate()
+      document.write(dt)
+      const dy = da.getDay()
+      document.write(dy)*/
+      
+    </script>
+  </body>
+</html>
